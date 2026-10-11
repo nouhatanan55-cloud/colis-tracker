@@ -1,0 +1,43 @@
+{
+  "profil": {
+    "nom": "Administrateur",
+    "email": "admin@colistracker.ma",
+    "telephone": "0634434992",
+    "poste": "Administrateur"
+  },
+  "livraison": {
+    "ville": "Rabat",
+    "devise": "MAD",
+    "poids": 2,
+    "affectation": "automatique",
+    "prix": 25
+  },
+  "entreprise": {
+    "nom": "Colis Tracke",
+    "adresse": "Casablanca, Maroc",
+    "email": "contact@colistracker.ma",
+    "telephone": "0634434992",
+    "ice": "",
+    "if": ""
+  },
+  "notifications": {
+    "nouveauColis": true,
+    "affectationLivreur": true,
+    "livraisonReussie": true,
+    "echecLivraison": true,
+    "email": false,
+    "application": true
+  },
+  "preferences": {
+    "theme": "clair",
+    "langue": "ar",
+    "taillePage": 10,
+    "formatDate": "DD/MM/YYYY"
+  },
+  "abonnement": {
+    "offre": "Pro",
+    "debut": "",
+    "fin": ""
+  },
+  "$schema": "./node_modules/json-server/schema.json"
+}

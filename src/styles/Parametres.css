@@ -1,0 +1,331 @@
+/* Page Paramètres — thème clair + thème sombre */
+.par-page {
+  --par-bg: var(--bg);
+  --par-card: var(--card);
+  --par-text: var(--navy);
+  --par-muted: var(--grey);
+  --par-border: var(--line);
+  --par-hover: #eef1ec;
+  min-height: 100%;
+  padding: 28px;
+  background: var(--par-bg);
+  color: var(--par-text);
+}
+
+.par-page.theme-sombre {
+  --par-bg: #1c2833;
+  --par-card: #263746;
+  --par-text: #eef2f5;
+  --par-muted: #a7b4c0;
+  --par-border: #3a4d5f;
+  --par-hover: #425a70;
+}
+
+.par-page * {
+  box-sizing: border-box;
+}
+
+.par-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.par-eyebrow {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: var(--lime);
+  color: var(--on-lime);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.par-header h1 {
+  margin: 10px 0 6px;
+  font-size: 28px;
+}
+
+.par-header p,
+.par-content > .par-panel > p {
+  margin: 0;
+  color: var(--par-muted);
+  font-size: 13px;
+}
+
+.par-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.par-nav,
+.par-panel {
+  padding: 20px;
+  background: var(--par-card);
+  border: 1px solid var(--par-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.par-nav {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+}
+
+.par-nav button {
+  position: relative;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--par-muted);
+  font-size: 13px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.par-nav button:hover {
+  background: var(--par-hover);
+  color: var(--par-text);
+}
+
+.par-nav button.active {
+  background: var(--slate);
+  color: #fff;
+  font-weight: 600;
+}
+
+.par-nav button.active::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+  transform: translateY(-50%);
+}
+
+.par-content {
+  min-width: 0;
+}
+
+.par-panel h2 {
+  margin: 0 0 6px;
+  color: var(--par-text);
+  font-size: 19px;
+}
+
+.par-panel h3 {
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.par-panel label:not(.par-switch-row):not(.par-file-label) {
+  display: block;
+  margin: 18px 0 7px;
+  color: var(--par-text);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.par-panel input:not([type="checkbox"]):not([type="file"]),
+.par-panel select {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid var(--par-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  background: var(--par-card);
+  color: var(--par-text);
+  font-size: 13px;
+}
+
+.par-panel input:focus,
+.par-panel select:focus {
+  border-color: var(--lime-d);
+  box-shadow: var(--focus);
+}
+
+.par-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--lime);
+  color: var(--on-lime);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.15s;
+}
+
+.par-header .par-btn {
+  margin-top: 0;
+}
+
+.par-btn:hover {
+  background: var(--lime-d);
+}
+
+.par-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.par-switch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--par-border);
+  color: var(--par-text);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Interrupteur moderne basé sur la checkbox existante */
+.par-switch-row input[type="checkbox"] {
+  position: relative;
+  flex-shrink: 0;
+  width: 38px;
+  height: 22px;
+  margin: 0;
+  border: none;
+  border-radius: 20px;
+  background: #cfd6cc;
+  appearance: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.par-switch-row input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.par-switch-row input[type="checkbox"]:checked {
+  background: var(--lime-d);
+}
+
+.par-switch-row input[type="checkbox"]:checked::after {
+  transform: translateX(16px);
+}
+
+.par-switch-row input[type="checkbox"]:focus-visible {
+  box-shadow: var(--focus);
+}
+
+.par-notice {
+  margin-top: 18px;
+  padding: 13px 14px;
+  border-left: 3px solid var(--lime);
+  border-radius: var(--radius-sm);
+  background: var(--lime-soft);
+  color: #4b5a3a;
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+.theme-sombre .par-notice {
+  background: rgba(184, 217, 78, 0.1);
+  color: var(--par-muted);
+}
+
+.par-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--par-border);
+  font-size: 13px;
+}
+
+.par-ok {
+  color: var(--ok);
+  font-weight: 600;
+}
+
+.par-file-label {
+  display: block;
+  margin-top: 20px;
+  color: var(--par-text);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.par-file-label input {
+  display: block;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.par-panel hr {
+  margin: 25px 0;
+  border: none;
+  border-top: 1px solid var(--par-border);
+}
+
+@media (max-width: 850px) {
+  .par-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .par-nav {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .par-page {
+    padding: 15px;
+  }
+
+  .par-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .par-header h1 {
+    font-size: 23px;
+  }
+
+  .par-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .par-panel {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "livreurs": [
+    {
+      "id": "2",
+      "nom": "Youssef B.",
+      "telephone": "0623456789",
+      "ville": "Rabat",
+      "statut": "actif"
+    },
+    {
+      "nom": "nouh atanan",
+      "telephone": "0612345678",
+      "ville": "Rabat",
+      "statut": "actif",
+      "id": "FJLPFwgH82w"
+    },
+    {
+      "nom": "nouh atanan",
+      "telephone": "0612345678",
+      "ville": "Rabat",
+      "statut": "actif",
+      "id": "10yJBEECuFQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

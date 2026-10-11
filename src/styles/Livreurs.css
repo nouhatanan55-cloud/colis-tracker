@@ -1,0 +1,412 @@
+/* Page Livreurs — utilise les variables de global.css */
+.liv-page {
+  padding: 24px;
+  color: var(--ink);
+}
+
+.liv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.liv-header h1 {
+  margin: 0 0 6px;
+  color: var(--navy);
+  font-size: 26px;
+}
+
+.liv-header p {
+  margin: 0;
+  color: var(--grey);
+  font-size: 13px;
+}
+
+/* Boutons */
+.liv-btn-add,
+.liv-btn-edit,
+.liv-btn-toggle,
+.liv-btn-delete,
+.liv-btn-cancel,
+.liv-confirm-delete {
+  padding: 8px 11px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+}
+
+.liv-btn-add {
+  padding: 10px 16px;
+  background: var(--lime);
+  color: var(--on-lime);
+  box-shadow: var(--shadow-sm);
+}
+
+.liv-btn-add:hover {
+  background: var(--lime-d);
+}
+
+.liv-btn-edit {
+  border-color: var(--line);
+  background: var(--card);
+  color: var(--navy);
+}
+
+.liv-btn-edit:hover {
+  border-color: var(--slate);
+}
+
+.liv-btn-toggle {
+  min-width: 102px;
+  text-align: center;
+}
+
+.liv-btn-enable {
+  border-color: #cfe38a;
+  background: var(--lime-l);
+  color: #3f5a0a;
+}
+
+.liv-btn-disable {
+  border-color: #f0d9a6;
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+
+.liv-btn-delete {
+  border-color: #f2c9c1;
+  background: var(--err-bg);
+  color: var(--err);
+}
+
+.liv-btn-cancel {
+  border-color: var(--line);
+  background: var(--card);
+  color: var(--ink);
+}
+
+.liv-confirm-delete {
+  background: var(--err);
+  color: #fff;
+}
+
+.liv-btn-toggle:hover,
+.liv-btn-delete:hover,
+.liv-btn-cancel:hover,
+.liv-confirm-delete:hover {
+  opacity: 0.85;
+}
+
+.liv-page button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Statistiques */
+.liv-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.liv-stat-card {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.liv-stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--navy);
+}
+
+.liv-stat-card:nth-child(2)::before {
+  background: var(--lime);
+}
+
+.liv-stat-card:nth-child(3)::before {
+  background: #9aa4ae;
+}
+
+.liv-stat-card span {
+  color: var(--grey);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.liv-stat-card h2 {
+  margin: 10px 0 0;
+  color: var(--navy);
+  font-size: 28px;
+}
+
+/* Recherche et filtres */
+.liv-toolbar {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 190px 160px;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.liv-toolbar input,
+.liv-toolbar select,
+.liv-modal input,
+.liv-modal select {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 14px;
+  outline: none;
+}
+
+.liv-toolbar input {
+  background: var(--muted-bg);
+}
+
+.liv-toolbar input:focus,
+.liv-toolbar select:focus,
+.liv-modal input:focus,
+.liv-modal select:focus {
+  border-color: var(--lime-d);
+  background: var(--card);
+  box-shadow: var(--focus);
+}
+
+/* Tableau */
+.liv-table-container {
+  overflow-x: auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.liv-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.liv-table th {
+  padding: 13px 8px;
+  background: var(--muted-bg);
+  color: var(--grey);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.liv-table td {
+  padding: 13px 8px;
+  border-top: 1px solid var(--line-soft);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.liv-table td strong {
+  color: var(--navy);
+}
+
+.liv-table tbody tr:hover {
+  background: #fafbf9;
+}
+
+.liv-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Statut */
+.liv-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.liv-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.liv-status-active {
+  background: var(--lime-soft);
+  color: #4d6b0d;
+}
+
+.liv-status-inactive {
+  background: #eef0ee;
+  color: var(--grey);
+}
+
+/* Modales */
+.liv-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(38, 55, 70, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.liv-modal,
+.liv-confirm-modal {
+  width: 100%;
+  max-width: 450px;
+  padding: 26px;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: liv-appear 0.2s ease;
+}
+
+.liv-modal h2,
+.liv-confirm-modal h2 {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-size: 20px;
+}
+
+.liv-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.liv-modal label {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.liv-modal-actions,
+.liv-confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.liv-confirm-modal {
+  max-width: 400px;
+  text-align: center;
+}
+
+.liv-confirm-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--err-bg);
+  color: var(--err);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.liv-confirm-modal h2 {
+  margin-bottom: 10px;
+}
+
+.liv-confirm-modal p {
+  color: var(--grey);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.liv-confirm-actions {
+  justify-content: center;
+}
+
+@keyframes liv-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .liv-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .liv-toolbar input {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .liv-page {
+    padding: 14px;
+  }
+
+  .liv-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .liv-header h1 {
+    font-size: 22px;
+  }
+
+  .liv-stats,
+  .liv-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .liv-toolbar input {
+    grid-column: auto;
+  }
+
+  .liv-modal,
+  .liv-confirm-modal {
+    padding: 20px;
+  }
+}

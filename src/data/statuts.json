@@ -1,0 +1,22 @@
+{
+  "created": {
+    "label": "Créé",
+    "badge": "b-created"
+  },
+  "affecte": {
+    "label": "Affecté",
+    "badge": "b-affecte"
+  },
+  "transit": {
+    "label": "En transit",
+    "badge": "b-transit"
+  },
+  "delivered": {
+    "label": "Livré",
+    "badge": "b-delivered"
+  },
+  "failed": {
+    "label": "Échec",
+    "badge": "b-failed"
+  }
+}
